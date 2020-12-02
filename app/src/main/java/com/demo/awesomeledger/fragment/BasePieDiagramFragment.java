@@ -84,7 +84,7 @@ abstract class BasePieDiagramFragment extends Fragment {
         month.setTime(new Date(bundle.getLong("month")));
         for (int i = 0; i < 12; i++) {
             List<Item> itemList = ItemDao.getInstance(getContext())
-                    .getItems(month, type, ItemKind.values()[i]);
+                    .getItemsOfMonthAndKind(month, type, ItemKind.values()[i]);
             float totalMoney = 0f;
             if (itemList != null) {
                 for (Item item: itemList) {
